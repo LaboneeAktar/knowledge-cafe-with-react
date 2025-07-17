@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import { PiBookmarkSimpleBold } from "react-icons/pi";
-const Blog = ({ blog, handleAddToBookmark }) => {
+const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
   const {
+    id,
     title,
     cover,
     author,
@@ -47,6 +48,12 @@ const Blog = ({ blog, handleAddToBookmark }) => {
           </span>
         ))}
       </p>
+      <button
+        onClick={() => handleMarkAsRead(id, reading_time)}
+        className="text-purple-800 font-bold underline"
+      >
+        Mark As Read
+      </button>
     </div>
   );
 };
