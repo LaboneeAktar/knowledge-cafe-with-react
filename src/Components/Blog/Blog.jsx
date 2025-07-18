@@ -17,9 +17,13 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
 
   //Toggle Bookmark button
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isMarkedRead, setIsMarkedRead] = useState(true);
 
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked);
+  };
+  const toggleRead = () => {
+    setIsMarkedRead(!isMarkedRead);
   };
 
   return (
@@ -67,10 +71,13 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
         ))}
       </p>
       <button
-        onClick={() => handleMarkAsRead(id, reading_time)}
+        onClick={() => {
+          handleMarkAsRead(id, reading_time);
+          toggleRead();
+        }}
         className="text-purple-800 font-bold underline"
       >
-        Mark As Read
+        {isMarkedRead ? "Mark As Read" : "Already Read"}
       </button>
     </div>
   );

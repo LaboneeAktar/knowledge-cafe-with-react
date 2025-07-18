@@ -9,19 +9,16 @@ function App() {
   const [readingTime, setReadingTime] = useState(0);
 
   // Add blog to bookmark component
-  const handleAddToBookmark = (id, blog) => {
-    const newBookmarks = [...bookmarks, blog];
-    setBookmarks(newBookmarks);
+  const handleAddToBookmark = (blog) => {
+    const existing = bookmarks.find((item) => item.id === blog.id);
 
-    //
-    if (bookmarks.includes(id)) {
-      const remainingBookmarks = bookmarks.filter(
-        (bookmark) => bookmark.id !== id
-      );
-      console.log(bookmarks);
-      setBookmarks(remainingBookmarks);
+    if (existing) {
+      // Remove blog
+      const filtered = bookmarks.filter((item) => item.id !== blog.id);
+      setBookmarks(filtered);
     } else {
-      setBookmarks([...bookmarks, id]);
+      // Add blog
+      setBookmarks([...bookmarks, blog]);
     }
   };
 
