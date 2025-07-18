@@ -1,6 +1,6 @@
 ## Knowledge Cafe
 
-Live Website Link: [Knowledge Cafe](http://knowledge.cafe003.surge.sh/)
+Live Website Link: [Knowledge Cafe](https://tiny-maamoul-0428b5.netlify.app/)
 
 ## Website Features
 
