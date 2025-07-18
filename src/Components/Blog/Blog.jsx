@@ -52,7 +52,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
             }}
             className="ml-2 text-xl"
           >
-            {isBookmarked ? (
+            {isBookmarked && isMarkedRead ? (
               <FaBookmark></FaBookmark>
             ) : (
               <FaRegBookmark></FaRegBookmark>
