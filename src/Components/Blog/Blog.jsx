@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
-import { PiBookmarkSimpleBold } from "react-icons/pi";
+import { useState } from "react";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
+
+//
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
   const {
     id,
@@ -11,10 +14,18 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
     reading_time,
     hashtags,
   } = blog;
+
+  //Toggle Bookmark button
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const toggleBookmark = () => {
+    setIsBookmarked(!isBookmarked);
+  };
+
   return (
     <div className="mb-14 space-y-2">
       <img
-        className="w-full object-cover mb-8 rounded-md"
+        className="w-full h-[300px] object-cover mb-8 rounded-md"
         src={cover}
         alt={`Cover picture of the ${title}`}
       />
@@ -31,10 +42,17 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
             {reading_time} min read
           </span>
           <button
-            onClick={() => handleAddToBookmark(blog)}
+            onClick={() => {
+              handleAddToBookmark(blog);
+              toggleBookmark();
+            }}
             className="ml-2 text-xl"
           >
-            <PiBookmarkSimpleBold></PiBookmarkSimpleBold>
+            {isBookmarked ? (
+              <FaRegBookmark></FaRegBookmark>
+            ) : (
+              <FaBookmark></FaBookmark>
+            )}
           </button>
         </div>
       </div>

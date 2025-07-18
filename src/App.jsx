@@ -16,7 +16,7 @@ function App() {
 
   //Add total reading time
   const handleMarkAsRead = (id, time) => {
-    const newReadingTime = readingTime + time;
+    const newReadingTime = parseFloat(readingTime) + parseFloat(time);
     setReadingTime(newReadingTime);
     const remainingBookmarks = bookmarks.filter(
       (bookmark) => bookmark.id !== id
@@ -32,7 +32,7 @@ function App() {
           handleAddToBookmark={handleAddToBookmark}
           handleMarkAsRead={handleMarkAsRead}
         ></Blogs>
-        <Bookmarks bookmarks={bookmarks}></Bookmarks>
+        <Bookmarks bookmarks={bookmarks} readingTime={readingTime}></Bookmarks>
       </div>
     </>
   );
