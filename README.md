@@ -1,3 +1,15 @@
-# Knowledge Cafe
+## Knowledge Cafe
 
-### Live Link - (http://knowledge.cafe003.surge.sh/)
+Live Website Link: [Knowledge Cafe](http://knowledge.cafe003.surge.sh/)
+
+## Website Features
+
+- About Blogs about Programming
+- Contain 10 reading blog
+- You can add/remove blog in your bookmark list and add reading time
+
+## Resources & Credits
+
+- Design Implementation : [Vite + React]
+  [TailWind-CSS](https://tailwindcss.com/docs/installation)
+- Icon : [React Icon](https://react-icons.github.io/react-icons/)
