@@ -1,7 +1,7 @@
 import Bookmark from "../Bookmark/Bookmark";
 
 const Bookmarks = ({ bookmarks, readingTime }) => {
-  console.log(bookmarks);
+  // console.log(bookmarks);
   return (
     <div className="md:w-1/3 lg:ml-6">
       <div className="mb-4">

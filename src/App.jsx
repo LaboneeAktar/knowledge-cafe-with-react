@@ -9,15 +9,28 @@ function App() {
   const [readingTime, setReadingTime] = useState(0);
 
   // Add blog to bookmark component
-  const handleAddToBookmark = (blog) => {
+  const handleAddToBookmark = (id, blog) => {
     const newBookmarks = [...bookmarks, blog];
     setBookmarks(newBookmarks);
+
+    //
+    if (bookmarks.includes(id)) {
+      const remainingBookmarks = bookmarks.filter(
+        (bookmark) => bookmark.id !== id
+      );
+      console.log(bookmarks);
+      setBookmarks(remainingBookmarks);
+    } else {
+      setBookmarks([...bookmarks, id]);
+    }
   };
 
   //Add total reading time
   const handleMarkAsRead = (id, time) => {
     const newReadingTime = parseFloat(readingTime) + parseFloat(time);
     setReadingTime(newReadingTime);
+
+    //Remove Bookmarks
     const remainingBookmarks = bookmarks.filter(
       (bookmark) => bookmark.id !== id
     );

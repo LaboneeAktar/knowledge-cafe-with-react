@@ -49,9 +49,9 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
             className="ml-2 text-xl"
           >
             {isBookmarked ? (
-              <FaRegBookmark></FaRegBookmark>
-            ) : (
               <FaBookmark></FaBookmark>
+            ) : (
+              <FaRegBookmark></FaRegBookmark>
             )}
           </button>
         </div>
