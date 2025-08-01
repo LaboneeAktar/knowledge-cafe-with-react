@@ -1,6 +1,6 @@
 ## Knowledge Cafe
 
-Live Website Link: [Knowledge Cafe](https://tiny-maamoul-0428b5.netlify.app/)
+Live Website Link: [Knowledge Cafe](https://knowledge-cafe-labbie.netlify.app/)
 
 ## Website Features
 
